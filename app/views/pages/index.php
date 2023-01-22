@@ -7,8 +7,9 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
   <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
-  <link rel="stylesheet" href="<?php echo URLROOT; ?>../css/style1.css">
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>./css/style1.css">
   <title><?php echo SITENAME; ?></title>
   
 
@@ -21,9 +22,9 @@
      <div class="container">
          <div class="row">
              <div class="col-lg-6 col-md-6 wow bounceInLeft">
-                 <h1>find your destination</h1>
+                 <h1>Votre pharmacie en ligne</h1>
                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,</p>
-                 <button class="btn btn-lg btn-primary">reserve now!</button>
+                 <button class="btn btn-lg btn-primary">view more!</button>
                  <button class="btn btn-lg btn-success">View Detail</button>
              </div>
              <!-- <div class="col-lg-6 col-md-6 wow bounceInRight">
@@ -66,127 +67,37 @@
      </div>
  </div>
 <!--  -->
-<div id="pricing" class="pricing">
-    <div class="container">
-        <div class="row">
-            <h2 class="wow fadeInUp">our famouse cruses</h2>
-            <p class="wow fadeInUp" >orem Ipsum passages, and more recently with desktop publishing software</p>
-            <div class="col-lg-3 col-md-3 wow flipInY" >
-                <div class="packages">
-                <div><img style=" height: 200px ; width: 100%; " src="../img/6.jpg" alt=""></div>
-                    <h4>Bronze</h4>
-                    <h1>100 $</h1>
-                    <b>nombre de nuits:3 jours</b>
-                    <p>port de depart:casablanca</p>
-                    <hr>
-                    <li>casa,turki,malizia</li>
-                    <li>date de depart:11</li>
-                    <li>navire:risarma</li>
-                    <button class="btn btn-success">reserve now!</button>
-                    <button class="btn btn-success">view more!</button>
-                </div>
-                <div class="packages">
-                <div><img style=" height: 200px ; width: 100%; " src="../img/17.jpg" alt=""></div>
-                    <h4>Bronze</h4>
-                    <h1>100 $</h1>
-                    <b>nombre de nuits:3 jours</b>
-                    <p>port de depart:casablanca</p>
-                    <hr>
-                    <li>casa,turki,malizia</li>
-                    <li>date de depart:11</li>
-                    <li>navire:risarma</li>
-                    <button class="btn btn-success">reserve now!</button>
-                    <button class="btn btn-success">view more!</button>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 wow flipInY" >
-            <div class="packages">
-                <div><img style=" height: 200px ; width: 100%; " src="../img/17.jpg" alt=""></div>
-                    <h4>Bronze</h4>
-                    <h1>100 $</h1>
-                    <b>nombre de nuits:3 jours</b>
-                    <p>port de depart:casablanca</p>
-                    <hr>
-                    <li>casa,turki,malizia</li>
-                    <li>date de depart:11</li>
-                    <li>navire:risarma</li>
-                    <button class="btn btn-success">reserve now!</button>
-                    <button class="btn btn-success">view more!</button>
-                </div>
-                <div class="packages">
-                <div><img style=" height: 200px ; width: 100%; " src="../img/18.jpg" alt=""></div>
-                    <h4>Bronze</h4>
-                    <h1>100 $</h1>
-                    <b>nombre de nuits:3 jours</b>
-                    <p>port de depart:casablanca</p>
-                    <hr>
-                    <li>casa,turki,malizia</li>
-                    <li>date de depart:11</li>
-                    <li>navire:risarma</li>
-                    <button class="btn btn-success">reserve now!</button>
-                    <button class="btn btn-success">view more!</button>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 wow flipInY" >
-            <div class="packages">
-                <div><img style=" height: 200px ; width: 100%; " src="../img/13.jpg" alt=""></div>
-                    <h4>Bronze</h4>
-                    <h1>100 $</h1>
-                    <b>nombre de nuits:3 jours</b>
-                    <p>port de depart:casablanca</p>
-                    <hr>
-                    <li>casa,turki,malizia</li>
-                    <li>date de depart:11</li>
-                    <li>navire:risarma</li>
-                    <button class="btn btn-success">reserve now!</button>
-                    <button class="btn btn-success">view more!</button>
-                </div>
-                <div class="packages">
-                <div><img style=" height: 200px ; width: 100%; " src="../img/18.jpg" alt=""></div>
-                    <h4>Bronze</h4>
-                    <h1>100 $</h1>
-                    <b>nombre de nuits:3 jours</b>
-                    <p>port de depart:casablanca</p>
-                    <hr>
-                    <li>casa,turki,malizia</li>
-                    <li>date de depart:11</li>
-                    <li>navire:risarma</li>
-                    <button class="btn btn-success">reserve now!</button>
-                    <button class="btn btn-success">view more!</button>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 wow flipInY" >
-            <div class="packages">
-                <div><img style=" height: 200px ; width: 100%; " src="../img/insta.jpg" alt=""></div>
-                    <h4>Bronze</h4>
-                    <h1>100 $</h1>
-                    <b>nombre de nuits:3 jours</b>
-                    <p>port de depart:casablanca</p>
-                    <hr>
-                    <li>casa,turki,malizia</li>
-                    <li>date de depart:11</li>
-                    <li>navire:risarma</li>
-                    <button class="btn btn-success">reserve now!</button>
-                    <button class="btn btn-success">view more!</button>
-                </div>
-                <div class="packages">
-                <div><img style=" height: 200px ; width: 100%; " src="../img/19.jpg" alt=""></div>
-                    <h4>Bronze</h4>
-                    <h1>100 $</h1>
-                    <b>nombre de nuits:3 jours</b>
-                    <p>port de depart:casablanca</p>
-                    <hr>
-                    <li>casa,turki,malizia</li>
-                    <li>date de depart:11</li>
-                    <li>navire:risarma</li>
-                    <button class="btn btn-success">reserve now!</button>
-                    <button class="btn btn-success">view more!</button>
-                </div>
 
-            </div>
-        </div>
+<section class="equipe-section">
+    <div class="equipe-text-box">
+      <h5>LE CABINET ET L’ÉQUIPE</h5>
+      <h2>Cabinet de Chirurgie Orthopédique et Traumatologie</h2>
+      <p class="text-box-p">L’emplacement idéal du cabinet à proximité du centre ville, son décor moderne et ses
+        équipements à la pointe permettent d’assurer un diagnostic pointu et une meilleure prise en charge du patient.
+      </p>
+      <p class="text-box-sec-p">
+        <i class="fas fa-check"></i>
+        Une équipe veillant assidûment au bon fonctionnement du cabinet médical
+      </p>
+      <p class="text-box-sec-p">
+        <i class="fas fa-check"></i>
+        Un médecin disponible et dévoué à ses patients
+      </p>
     </div>
-</div>
+    <div class="photos-section">
+      <div class="equipe-image-box">
+        <img src="<?php echo URLROOT?>/img/1.jpg" alt="dr rahbani">
+        <img src="<?php echo URLROOT?>/img/2.jpg" alt="equipe dr REHBANI">
+      </div>
+      <div class="equipe-image-box">
+        <img src="<?php echo URLROOT?>/img/3.jpg" alt="cabinet dr REHBANI">
+        <img src="<?php echo URLROOT?>/img/5.jpg " alt="cabinet dr REHBANI">
+      </div>
+    </div>
+
+  </section>
+<!--  -->
+
 
 <!--  -->
 
