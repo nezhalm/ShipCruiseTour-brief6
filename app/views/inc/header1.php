@@ -20,5 +20,5 @@
   <link href="./design/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<?php require APPROOT . '/views/inc/navbar.php'; ?>
+
 <div class="container">

@@ -10,6 +10,6 @@
   // URL Root
   define('URLROOT', 'http://localhost/BRIEF7');
   // Site Name
-  define('SITENAME', 'hii');
+  define('SITENAME', 'pharmacie ');
   // App Version
   define('APPVERSION', '1.0.0');

@@ -5,8 +5,8 @@
    * URL FORMAT - /controller/method/params
    */
   class Core {
-    protected $currentController = 'pages';
-    protected $currentMethod = 'index';
+    protected $currentController = 'users';
+    protected $currentMethod = 'login';
     protected $params = [];
 
     public function __construct(){

@@ -29,19 +29,24 @@ class Pages extends Controller
   // /////////////////////////////////////////////////
   public function about()
   {
-
+    if(!isset($_SESSION['user_id'])){
+      redirect('users/login');}
     $this->view('pages/about');
   }
 //////////////////////////////////////////////////////
   public function stat()
   {
-
+    if(!isset($_SESSION['user_id'])){
+      redirect('users/login');}
     $nb = $this->produitModel->nombreProduit();
     $prix = $this->produitModel->prixProduit();
-
+    $prixmin = $this->produitModel->prixminProduit();
+    $prixsomme = $this->produitModel->sommeProduit();
     $data = [
       'nb' => $nb,
-      'prix' => $prix
+      'prix' => $prix,
+      'prixmin' => $prixmin,
+      'prixsomme' => $prixsomme,
     ];
 
     $this->view('pages/stat', $data);
@@ -51,7 +56,8 @@ class Pages extends Controller
   public function contact()
   {
 
-
+    if(!isset($_SESSION['user_id'])){
+      redirect('users/login');}
     $this->view('pages/contact');
   }
 
@@ -59,6 +65,8 @@ class Pages extends Controller
 
   public function adminproduit()
   {
+    if(!isset($_SESSION['user_id'])){
+      redirect('users/login');}
     // Get posts
     $produit = $this->produitModel->getProduit();
 
@@ -73,10 +81,11 @@ class Pages extends Controller
   //////////////////////////////////////////////////////
 
   
-  //////////////////////////////////////////////////////
+
   public function table()
   {
-
+    if(!isset($_SESSION['user_id'])){
+      redirect('users/login');}
     $produit = $this->produitModel->getProduit();
 
     $data = [

@@ -31,74 +31,68 @@
         <form action="<?php echo URLROOT; ?>/produits/add" method="post" id="form">
             <div class="form-group">
                 <label for="libelle_produit">libelle_produit: </label>
-                <input type="text" name="libelle_produit" class="form-control form-control-lg" id="libelle_produit">
+                <input type="text" name="libelle_produit[]" class="form-control form-control-lg" id="libelle_produit">
                 <span id="libelle_produit_error"></span>
             </div>
 
             <div class="form-group">
                 <label for="quantite_produit">quantite: </label>
-                <input type="number" name="quantite_produit" class="form-control form-control-lg" id="quantite_produit">
+                <input type="number" name="quantite_produit[]" min="1" class="form-control form-control-lg" id="quantite_produit">
                 <span id="quantite_produit_error"></span>
             </div>
 
             <div class="form-group">
                 <label for="price_produit">price: </label>
-                <input type="number" name="price_produit" class="form-control form-control-lg" id="price_produit">
+                <input type="number" name="price_produit[]" min="1" class="form-control form-control-lg" id="price_produit">
                 <span id="price_produit_error"></span>
             </div>
 
 
             <div class="form-group">
                 <label for="img_produit">image: </label>
-                <input type="file" name="img_produit" class="form-control form-control-lg" id="img_produit">
+                <input type="file" name="img_produit[]" class="form-control form-control-lg" id="img_produit">
                 <span id="img_produit_error"></span>
             </div>   
-            <!-- <input type="submit" class="btn btn-success btn-block" value="Add"> -->
-            <button style="width: 200px; padding: 10px 10px 10px 0px; margin-top:10px margin-left:100px" type="submit"  class="btn btn-success btn-block" > Add </button>
+            <button style="width: 200px; padding: 10px 10px 10px 0px; margin-top:10px margin-left:100px" type="submit"   class="btn btn-success btn-block" > Add </button>
 
-            <!-- <input style="width: 200px; padding: 10px 10px 10px 0px;" type="submit" id="btn" class="btn btn-warning btn-block" value=" Add another product "> -->
-            <!-- <input style="width: 100px; padding: 10px 10px 10px 0px;" type="submit" id="btn"  class="btn btn-warning btn-block" value="Add All "> -->
-            <a  style="width: 200px; padding: 10px 10px 10px 0px; margin-top:10px" type="button" id='' class="btn btn-warning btn-block" value=" "> Add another product</a>
-
-        </form>
-    </div>
-
-        <div class="card card-body bg-light mt-5">
+            <button  style="width: 200px; padding: 10px 10px 10px 0px; margin-top:10px" type="button" id="btn" class="btn btn-warning btn-block" > Add another product</button>
 
 
+            <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
 
-<form action="" method="" id="form2" class="hidden" >
-    <div class="form-group">
+<div class="hidden" id="form2">
+            <div class="form-group">
         <label for="libelle_produit">name of product: </label>
-        <input type="text" name="libelle_produit" class="form-control form-control-lg" id="libelle_produit2">
+        <input type="text" name="libelle_produit[]" class="form-control form-control-lg" id="libelle_produit2" >
         <span id="libelle_produit_error2"></span>
     </div>
 
     <div class="form-group">
         <label for="quantite_produit">quantite: </label>
-        <input type="number" name="quantite_produit" class="form-control form-control-lg" id="quantite_produit2">
+        <input type="number" name="quantite_produit[]" min="1" class="form-control form-control-lg" id="quantite_produit2"  >
         <span id="quantite_produit_error2"></span>
     </div>
 
     <div class="form-group">
         <label for="price_produit">price: </label>
-        <input type="number" name="price_produit" class="form-control form-control-lg" id="price_produit2">
+        <input type="number" name="price_produit[]" min="1" class="form-control form-control-lg" id="price_produit2" >
         <span id="price_produit_error2"></span>
     </div>
 
 
     <div class="form-group">
         <label for="img_produit">image: </label>
-        <input type="file" name="img_produit" class="form-control form-control-lg" id="img_produit2">
+        <input type="file" name="img_produit[]" class="form-control form-control-lg" id="img_produit2" >
         <span id="img_produit_error2"></span>
     </div>
-    <input type="submit"  class="btn btn-success btn-block" value="Add">
-    <input style="width: 100px; padding: 10px 10px 10px 0px;" type="submit" id="btn2"  class="btn btn-warning btn-block" value="Add All ">
+    <input  style="width: 100px; padding: 10px 10px 10px 0px;" type="submit" id="btn2"  class="btn btn-warning btn-block" value="Add All ">
+       
+   </div>
 </form>
-        <!-- <script src="<?php echo URLROOT; ?>../js/addproduit.js"></script> -->
+        <script src="<?php echo URLROOT; ?>../js/addproduit.js"></script>
 
         </div>
-
+ </div>
 
     </body>
 

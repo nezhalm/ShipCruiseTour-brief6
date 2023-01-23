@@ -1,4 +1,4 @@
-<?php require APPROOT . '/views/inc/header.php';?>
+<?php require APPROOT . '/views/inc/header1.php';?>
 <body>
 <style>
         .error {

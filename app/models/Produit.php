@@ -15,7 +15,6 @@
       $this->db->bind(':quantite_produit', $data['quantite_produit']);
       $this->db->bind(':price_produit', $data['price_produit']);
       $this->db->bind(':img_produit', $data['img_produit']);
-   
 
       // Execute
       if($this->db->execute()){
@@ -92,9 +91,23 @@
       return $count;
       
     }
-
+    public function sommeProduit(){
+      $this->db->query('SELECT SUM(price_produit) FROM produit');
+      $this->db->execute();
+      $count = $this->db->fetchColumn();
+      return $count;
+      
+    }
     public function prixProduit(){
       $this->db->query('SELECT MAX(price_produit) from produit');
+
+      $this->db->execute();
+      $count = $this->db->fetchColumn();
+      return $count;
+
+    }
+    public function prixminProduit(){
+      $this->db->query('SELECT MIN(price_produit) from produit');
 
       $this->db->execute();
       $count = $this->db->fetchColumn();
@@ -119,7 +132,7 @@
     public function search( $libelle)
     {
    
-      $this->db->query('SELECT * FROM produit WHERE libelle_produit=:libelle');
+      $this->db->query('SELECT * FROM produit where libelle_produit LIKE "%":libelle "%"');
       $this->db->bind(':libelle', $libelle);
       $row = $this->db->resultSet();
       if($row){
@@ -132,16 +145,28 @@
 
     public function updateProduit($data)
     {
-   
-      $this->db->query('UPDATE produit SET libelle_produit=:libelle_produit,price_produit=:price_produit ,img_produit=:img_produit,quantite_produit=:quantite_produit WHERE id_produit = :id');
-   $this->db->bind(':id', $data['id_produit']);
+
+    $imgPath = URLROOT . "/img/". $data["img_produit"]["name"];
+    $img = $data["img_produit"]["name"];
+      move_uploaded_file($data['img_produit']["tmp_name"], $imgPath);
+      if (isset($data["img_produit"]) && !empty($data["img_produit"])) {
+        $this->db->query('UPDATE produit SET libelle_produit=:libelle_produit,price_produit=:price_produit ,img_produit=:img_produit,quantite_produit=:quantite_produit WHERE id_produit = :id');
+
+          $this->db->bind(':img_produit', $img);
+      } else {
+        $this->db->query('UPDATE produit SET libelle_produit=:libelle_produit,price_produit=:price_produit ,quantite_produit=:quantite_produit WHERE id_produit = :id');
+
+      }
+
+
+     $this->db->bind(':id', $data['id_produit']);
     $this->db->bind(':quantite_produit',$data['quantite_produit']);
-    $this->db->bind(':img_produit', $data['img_produit']);
+    // $this->db->bind(':img_produit', $data['img_produit']);
     $this->db->bind(':libelle_produit', $data['libelle_produit']);
     $this->db->bind(':price_produit', $data['price_produit']);
 
     // Execute
-    if($this->db->execute()){
+    if($this->db->execute()){ 
       return true;
     } else {
       return false;

@@ -11,14 +11,13 @@ let image_error = document.getElementById('img_error')
 
 let form = document.getElementById('form')
 
-// const number = /^\d+.?\d*$/
 form.addEventListener('submit' , e => {
+    
     e.preventDefault()
-    if(validatelibelle(libelle ,libelle_error)  &&  validatequantite(quantite , quantite_error) &&  validateprice(price ,price_error) &&  validateprice(image ,image_error)  ) {
+    if(validatelibelle(libelle ,libelle_error)  &&  validatequantite(quantite , quantite_error)  ) {
       form.submit()
-
     } 
-  
+    
 })
 
 function validatelibelle(libelle ,libelle_error) {

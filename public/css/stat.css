@@ -97,6 +97,7 @@
   }
   header .container {
     display: flex;
+    height: 500px;
     justify-content: space-between;
     align-items: center;
     position: relative;
@@ -280,6 +281,7 @@
   }
   .services .srv-box {
     display: flex;
+
   }
   .services .srv-box i {
     margin-right: 50px;
@@ -527,15 +529,16 @@
     background-color: rgb(0 0 0 / 70%);
   }
   .stats .container {
-    justify-content: space-around;
+    justify-content:normal;
     position: relative;
     display: flex;
-    flex-wrap: wrap;
+   
   }
   .stats .container .box {
     color: rgb(255, 255, 255);
-    padding: 100px;
+    padding: 0px;
     background-color: var(--transparent-color);
+    padding: 100px;
   }
   @media (max-width: 767px) {
     .stats .container .box {
@@ -579,7 +582,7 @@
   .our-skills .container {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+   
   }
   @media (min-width: 992px) {
     .our-skills .container > div {

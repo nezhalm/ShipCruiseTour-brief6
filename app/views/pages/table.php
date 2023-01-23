@@ -28,13 +28,13 @@
  
 </head>
 
-<body>
+<body  >
 
 
 
  
-<div class="filter"></div>
- <table style="margin-top: 200px; " >
+<div  class="filter"></div>
+ <table style=" " >
 
 
 
@@ -85,3 +85,6 @@
                 <h3>aucun produit !</h3>
               <?php endif; ?>
  </table>
+ 
+  
+ </body>

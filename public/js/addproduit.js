@@ -20,22 +20,18 @@ let image_error2 = document.getElementById('img_produit_error2')
 let form = document.getElementById('form')
 let form2 = document.getElementById('form2')
 
-// const number = /^\d+.?\d*$/
+
 form.addEventListener('submit' , e => {
     e.preventDefault()
     if(validatelibelle(libelle ,libelle_error)  &&  validatequantite(quantite , quantite_error) &&  validateprice(price ,price_error) && validateimage(image , image_error)) {
-       
         form.submit()
-
     } 
 })
 
 form2.addEventListener('submit' , e => {
     e.preventDefault()
     if(validatelibelle(libelle2 ,libelle_error2)  &&  validatequantite(quantite2 , quantite_error2) &&  validateprice(price2 ,price_error2) && validateimage(image2 , image_error2)) {
-        console.log("TEST fFFFF")
         form2.submit()
-
     } 
 })
 
@@ -158,7 +154,7 @@ function validateprice(price, price_error) {
         return true;
 
     }
-}2
+}
 
 
 
@@ -166,13 +162,9 @@ function validateprice(price, price_error) {
 // ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 //      add more products
 let btn = document.getElementById('btn')
-if(form.validatelibelle(libelle2 ,libelle_error2)  &&  form.validatequantite(quantite2 , quantite_error2) &&  form.validateprice(price2 ,price_error2) && form.validateimage(image2 , image_error2)) {
-    btn.addEventListener("click", affiche);
-
+btn.addEventListener("click", affiche);
 function affiche() {
-  form2.style.display = 'block'
-}
- 
+    form2.style.display = 'block'
 }
 
 
