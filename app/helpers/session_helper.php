@@ -26,8 +26,7 @@
     }
   }
 
-
-  function flash2($name = '', $message = '', $class = 'alert alert-danger'){
+  function flash1($name = '', $message = '', $class = 'alert alert-danger'){
     if(!empty($name)){
       if(!empty($message) && empty($_SESSION[$name])){
         if(!empty($_SESSION[$name])){
@@ -48,7 +47,7 @@
       }
     }
   }
-
+  
   function isLoggedIn(){
     if(isset($_SESSION['user_id'])){
       return true;
@@ -56,3 +55,11 @@
       return false;
     }
   }
+  function isAdmin(){
+    if(isset($_SESSION['user_id']) && $_SESSION['is_admin'] === 1){
+      return true;
+    } else {
+      return false;
+    }
+  }
+

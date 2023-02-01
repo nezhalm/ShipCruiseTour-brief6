@@ -1,7 +1,7 @@
 <?php
 class Users extends Controller
 {
-    private $userModel;
+    public $userModel;
     public function __construct()
     {
         $this->userModel = $this->model('User');
@@ -9,82 +9,68 @@ class Users extends Controller
     }
 
 
+
     public function login()
     {
         // Check for POST
-
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-           
             // Process form
             // Sanitize POST data
-            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+            $_POST = filter_input_array(INPUT_POST, 513);
 
-            // Init data
-            $data = [
-                'email' => trim($_POST['email']),
-                'password' => trim($_POST['password']),
-            ];
+            $activationcode = $_POST['activationcode'];
 
-           
-                // Validated
-                // Check and set logged in user
-                $loggedInUser = $this->userModel->login($data['email'], $data['password']);
-
+            // Make sure errors are empty
+            if (empty($activationcode)) {
+                echo json_encode(["error" => "enter le code"]);
+            } else {
+                $loggedInUser = $this->userModel->login($activationcode);
 
                 if ($loggedInUser) {
-                    // Create Session
-                    $this->createUserSession($loggedInUser);
+                    echo json_encode($loggedInUser);
                 } else {
-            
-                    flash2('register_danger', 'info incorrect');
-                    $this->view('users/login', $data);
+                    echo json_encode(["invalid" => "invalid"]);
                 }
+            }
+        }
+    }
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        } else {
-            // Init data
+
+    public function register()
+    {
+        // Check for POST
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            // Process form
+
+            $bytes = random_bytes(4);
+
+
+            // Sanitize POST data
+            $_POST = filter_input_array(INPUT_POST, 513);
             $data = [
-                'email' => '',
-                'password' => '',
+                'activationcode' => bin2hex($bytes),
+                'first_name' => $_POST['first_name'],
+                'last_name' => $_POST['last_name'],
+                'email' => $_POST['email']
             ];
+            // Register User
+            if ($this->userModel->register($data)) {
+                if ($this->userModel->login($data['activationcode'])) {
+                    echo json_encode([
+                        'Success' => "register avec success",
+                        'reject' => 'votre code : `' . $this->userModel->login($data['activationcode'])->activationcode . '`'
+                    ]);
 
-            // Load view
-            $this->view('users/login', $data);
+                }
+            } else {
+                echo json_encode(['error' => "eroooooooooor"]);
+            }
         }
     }
 
 
-
-    // public function login()
-    // {
-    //     // Check for POST
-    //     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-    //         $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-
-    //         $data = [
-    //             'email' => trim($_POST['email']),
-    //             'password' => trim($_POST['password']),
-
-    //         ];
-    //         if ($this->userModel->findUserByEmail($data['email'])) {
-    //             echo 1;
-    //         }
-
-    //     } else {
-    //         $data = [
-    //             'email' => '',
-    //             'password' => '',
-
-    //         ];
-
-    //         $this->view('users/login', $data);
-    //     }
-    // }
-
-
-
-
-
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
     public function createUserSession($user)
     {
         $_SESSION['user_id'] = $user->id;
@@ -93,13 +79,13 @@ class Users extends Controller
         $_SESSION['is_admin'] = $user->is_admin;
 
         // exit;
+        if ($_SESSION['is_admin'] == 1) {
+            redirect('pages/adminport');
+        } else {
+            redirect('pages/index');
+        }
 
-        redirect('pages/index');
     }
-
-
-
-
 
     public function logout()
     {
@@ -108,9 +94,5 @@ class Users extends Controller
         unset($_SESSION['user_name']);
         session_destroy();
         redirect('users/login');
-    }
-    public function reserve()
-    {
-
     }
 }

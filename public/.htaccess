@@ -2,11 +2,9 @@
 <IfModule mod_rewrite.c>
   Options -Multiviews
   RewriteEngine On
-  RewriteBase /BRIEF7/public
+  RewriteBase /brief8/public
 
-# to index.php in public dans cette url:localhost/shareposts/public/::::: 
- # means that if the file with the specified name in the browser doesn’t exist,
- #or the directory in the browser doesn’t exist then procede to the rewrite rule
+# to index.php in public dans cette url:localhost/shareposts/public/:::::  
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteRule  ^(.+)$ index.php?url=$1 [QSA,L]
